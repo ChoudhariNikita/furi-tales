@@ -1,38 +1,73 @@
-import { useState, useEffect } from 'react';
-import Story from './Story';
+import { useState } from 'react';
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
+import Footer from './components/Footer';
+import Story from './components/Story';
+import story1 from './data/stories/story1.md?raw';
+import story2 from './data/stories/story2.md?raw';
 
 const storyFiles = [
-  '/src/stories/story1.md'
+  { title: 'Story 1', content: story1 },
+  { title: 'Story 2', content: story2 },
 ];
 
 function App() {
   const [currentStoryIndex, setCurrentStoryIndex] = useState(0);
-  const [storyContent, setStoryContent] = useState('');
 
-  useEffect(() => {
-    fetch(storyFiles[currentStoryIndex])
-      .then((res) => res.text())
-      .then((text) => setStoryContent(text));
-  }, [currentStoryIndex]);
-
-  const nextStory = () => {
-    setCurrentStoryIndex((prev) => (prev + 1) % storyFiles.length);
+  const selectStory = (index) => {
+    setCurrentStoryIndex(index);
   };
 
-  const prevStory = () => {
-    setCurrentStoryIndex((prev) => (prev - 1 + storyFiles.length) % storyFiles.length);
+  const goToNextStory = () => {
+    if (currentStoryIndex < storyFiles.length - 1) {
+      setCurrentStoryIndex(currentStoryIndex + 1);
+    }
+  };
+
+  const goToPrevStory = () => {
+    if (currentStoryIndex > 0) {
+      setCurrentStoryIndex(currentStoryIndex - 1);
+    }
   };
 
   return (
-    <div className="container mt-5">
-      <h1 className="text-center mb-4">📖 Furi-Tales</h1>
-      <div className="card shadow-sm p-4">
-        <Story content={storyContent} />
+    <div className="d-flex flex-column vh-100">
+      <Header />
+
+      <div className="d-flex flex-grow-1">
+        <Sidebar 
+          storyFiles={storyFiles}
+          selectStory={selectStory}
+          currentStoryIndex={currentStoryIndex}
+        />
+
+        <main className="flex-grow-1 p-4 overflow-auto">
+          <Story 
+            content={storyFiles[currentStoryIndex].content} 
+          />
+
+          {/* Prev and Next Buttons */}
+          <div className="d-flex justify-content-between mt-4">
+            <button 
+              className="btn btn-outline-primary"
+              onClick={goToPrevStory}
+              disabled={currentStoryIndex === 0}
+            >
+              ← Previous
+            </button>
+
+            <button 
+              className="btn btn-outline-primary"
+              onClick={goToNextStory}
+              disabled={currentStoryIndex === storyFiles.length - 1}
+            >
+              Next →
+            </button>
+          </div>
+        </main>
       </div>
-      <div className="d-flex justify-content-between mt-4">
-        <button onClick={prevStory} className="btn btn-outline-primary">⬅️ Previous</button>
-        <button onClick={nextStory} className="btn btn-primary">Next ➡️</button>
-      </div>
+
+      <Footer />
     </div>
   );
 }
