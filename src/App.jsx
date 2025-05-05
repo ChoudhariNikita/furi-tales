@@ -5,10 +5,14 @@ import Footer from './components/Footer';
 import Story from './components/Story';
 import story1 from './data/stories/story1.md?raw';
 import story2 from './data/stories/story2.md?raw';
+import story3 from './data/stories/story3.md?raw';
+import story4 from './data/stories/story4.md?raw';
 
 const storyFiles = [
   { title: 'Story 1', content: story1 },
   { title: 'Story 2', content: story2 },
+  { title: 'Story 3', content: story3 },
+  { title: 'Story 4', content: story4 },
 ];
 
 function App() {
