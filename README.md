@@ -16,12 +16,6 @@ Welcome to Furi-Tales, your cozy corner for learning Japanese the fun way — th
 - 🧭 Easy Navigation  
   Move smoothly between stories using the sidebar or navigation buttons.
 
-- 📱 Responsive Design  
-  Enjoy a seamless experience on mobile, tablet, or desktop.
-
-- 🌙 Dark Mode  
-  Read comfortably in any lighting environment.
-
 - 👩‍💻 About Us Modal  
   Learn the motivation behind Furi-Tales and what we're all about.
 
@@ -45,34 +39,32 @@ Welcome to Furi-Tales, your cozy corner for learning Japanese the fun way — th
 
 ## 📂 Project Structure
 
+```markdown
+furi-tales/  
+├── src/  
+│   ├── App.jsx               # Main app component  
+│   ├── main.jsx              # Entry point  
+│   ├── index.css             # Global styles  
+│   ├── assets/               # Logos and images  
+│   │   ├── Furitales logo.png  
+│   │   ├── Logo.png  
+│   ├── components/           # Reusable UI components  
+│   │   ├── AboutUs.jsx  
+│   │   ├── Footer.jsx  
+│   │   ├── Header.jsx  
+│   │   ├── Sidebar.jsx  
+│   │   ├── Story.jsx  
+│   ├── data/  
+│   │   ├── stories/          # Markdown-based stories  
+│   │   │   ├── story1.md  
+│   │   │   ├── story2.md  
+│   │   │   ├── story3.md  
+│   │   │   ├── story4.md  
+│   ├── styles/               # Additional styles (if needed)  
+├── index.html                # Base HTML template  
+├── vite.config.js            # Vite configuration  
+├── package.json              # Project dependencies & scripts  
 ```
-
-furi-tales/
-├── src/
-│   ├── App.jsx               # Main app component
-│   ├── main.jsx              # Entry point
-│   ├── index.css             # Global styles
-│   ├── assets/               # Logos and images
-│   │   ├── Furitales logo.png
-│   │   ├── Logo.png
-│   ├── components/           # Reusable UI components
-│   │   ├── AboutUs.jsx
-│   │   ├── Footer.jsx
-│   │   ├── Header.jsx
-│   │   ├── Sidebar.jsx
-│   │   ├── Story.jsx
-│   ├── data/
-│   │   ├── stories/          # Markdown-based stories
-│   │   │   ├── story1.md
-│   │   │   ├── story2.md
-│   │   │   ├── story3.md
-│   │   │   ├── story4.md
-│   ├── styles/               # Additional styles (if needed)
-├── index.html                # Base HTML template
-├── vite.config.js            # Vite configuration
-├── package.json              # Project dependencies & scripts
-
-````
 
 ---
 
@@ -84,7 +76,7 @@ Get started in just a few steps:
    ```bash
    git clone https://github.com/ChoudhariNikita/furi-tales.git
    cd furi-tales
-````
+   ```
 
 2. Install dependencies
 
