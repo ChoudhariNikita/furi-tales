@@ -1,5 +1,6 @@
 import { useState } from "react";
 import AboutUs from "./AboutUs";
+import logo from "../assets/logo.png"; // Adjust the path to your logo file
 
 function Header() {
   const [showModal, setShowModal] = useState(false);
@@ -10,18 +11,27 @@ function Header() {
 
   return (
     <>
-      <header className="navbar navbar-expand-lg navbar-dark bg-primary px-4">
-        <a className="navbar-brand" href="#">📚 Furi-Tales</a>
+      <header className="navbar navbar-expand-lg navbar-dark bg-black px-4">
+        <a className="navbar-brand d-flex align-items-center" href="#">
+          <img
+            src={logo}
+            alt="FuriTales+ Logo"
+            style={{ height: "50px", marginRight: "10px" }}
+          />
+          <span style={{ fontSize: "1.5rem" }}>Furi-Tales</span>
+        </a>
 
         <div className="collapse navbar-collapse">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
               <button className="btn btn-light btn-sm mx-2" onClick={toggleModal}>
-                About Us
+                <span style={{ fontSize: "1rem" }}>About Us</span>
               </button>
             </li>
             <li className="nav-item">
-              <button className="btn btn-light btn-sm">Feedback</button>
+              <button className="btn btn-light btn-sm">
+                <span style={{ fontSize: "1rem" }}>Feedback</span>
+              </button>
             </li>
           </ul>
         </div>
@@ -38,7 +48,6 @@ function Header() {
               width: "100%",
               height: "100%",
               backgroundColor: "rgba(0, 0, 0, 0.5)",
-              // backdropFilter: "blur(5px)",
               zIndex: 1040,
             }}
           ></div>
@@ -59,7 +68,9 @@ function Header() {
             <div className="modal-dialog" role="document">
               <div className="modal-content">
                 <div className="modal-header">
-                  <h3 className="modal-title" style={{ color: '#4CAF50' }}>About FuriTales</h3>
+                  <h3 className="modal-title" style={{ color: "#4CAF50", fontSize: "1.75rem" }}>
+                    About FuriTales
+                  </h3>
                   <button
                     type="button"
                     className="btn-close"
@@ -76,7 +87,7 @@ function Header() {
                     className="btn btn-secondary"
                     onClick={toggleModal}
                   >
-                    Close
+                    <span style={{ fontSize: "1rem" }}>Close</span>
                   </button>
                 </div>
               </div>
