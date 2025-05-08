@@ -1,0 +1,52 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1100;
+  background-color: black;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.brand-text {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.navbar-toggler {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.navbar-collapse {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-item button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .brand-text {
+    display: none;
+  }
+}

@@ -1,0 +1,43 @@
+.about-us-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    text-align: center;
+    color: #333;
+  }
+  
+  .about-us-container p {
+    margin: 10px 0;
+  }
+  
+  .about-us-container strong {
+    color: #646cff;
+  }
+  
+  .about-us-footer {
+    margin-top: 20px;
+    font-style: italic;
+    color: #555;
+  }
+  
+  @media (max-width: 768px) {
+    .about-us-container {
+      padding: 15px;
+      font-size: 0.9em;
+    }
+  
+    .about-us-footer {
+      font-size: 0.85em;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .about-us-container {
+      padding: 10px;
+      font-size: 0.8em;
+    }
+  
+    .about-us-footer {
+      font-size: 0.75em;
+    }
+  }
